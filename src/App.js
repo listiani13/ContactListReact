@@ -2,7 +2,7 @@
 import React, {Component} from 'React';
 import type {State} from './state';
 import ContactDetails from './ContactDetails';
-// import ContactList from './ContactList';
+import ContactList from './ContactList';
 import ContactListItem from './ContactListItem';
 
 type Props = {};
@@ -114,46 +114,12 @@ class App extends Component<Props, State> {
     console.log('selectedContactItem', selectedContactItem);
     return (
       <div className="outterDiv">
-        <div className="contactList">
-          <div className="columnView">
-            <h1>{contactTitle}</h1>
-            <button
-              type="button"
-              className="btn btn-primary"
-              style={{flex: 0.5}}
-            >
-              <span className="glyphicon glyphicon-plus" />
-              Add
-            </button>
-            <br /> <br />
-            <div className="rowView" role="group" style={{display: 'flex'}}>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search something here..."
-                style={{flex: 2}}
-                onChange={onSearchChange}
-              />
-              {/* <span style={{flex: 0.2}}>&nbsp;</span> */}
-            </div>
-            <br />
-            <ul className="list-group">
-              {filteredItems.map((item) => (
-                <ContactListItem
-                  key={item.id}
-                  contactData={item}
-                  onClickItem={this._onClickItem}
-                />
-              ))}
-            </ul>
-          </div>
-        </div>
-        {/* <ContactList
-          style={{columnStyle, ulStyle}}
+        <ContactList
           contactTitle={contactTitle}
-          contactListItems={filteredItems}
           onSearchChange={onSearchChange}
-        /> */}
+          filteredItems={filteredItems}
+          onClickItem={this._onClickItem}
+        />
         <ContactDetails contactItem={selectedContactItem} />
       </div>
     );
