@@ -17,6 +17,7 @@
   height: 100px;
   background-color: black;
   border-radius: 50%;
+  /* margin-right: -75px; */
 }
 .greyed-out{
   color: #E9E9E9 !important;
@@ -34,6 +35,9 @@
 };
 .tableContactDetails{
   padding: 2%;
+}
+.fullWidthTable{
+  width: 100%;
 }
 table,tr, td, tbody{
   /* border: 1px solid black; */
